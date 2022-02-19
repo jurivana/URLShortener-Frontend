@@ -11,20 +11,64 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$URLShortener-Frontend-primary: mat.define-palette(mat.$indigo-palette);
-$URLShortener-Frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$URLShortener-Frontend-warn: mat.define-palette(mat.$red-palette);
+$accent: (
+  50: #edf3f8,
+  100: #d6d7dc,
+  200: #bbbcc1,
+  300: #a0a1a9,
+  400: #848690,
+  500: #6b6d77,
+  600: #53555d,
+  700: #3b3c43,
+  800: #232429,
+  900: #0c0c13,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  ),
+);
+$primary: (
+  50: #ffe3f2,
+  100: #ffb4d2,
+  200: #fb84b2,
+  300: #f85393,
+  400: #f52475,
+  500: #db0a5b,
+  600: #ac0447,
+  700: #7c0133,
+  800: #4c001e,
+  900: #1f000b,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  ),
+);
+$URLShortener-Frontend-primary: mat.define-palette($primary, 500, 400, 700);
+$URLShortener-Frontend-accent: mat.define-palette($accent, 800, 500, 900);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$URLShortener-Frontend-theme: mat.define-light-theme(
+$URLShortener-Frontend-theme: mat.define-dark-theme(
   (
     color: (
       primary: $URLShortener-Frontend-primary,
       accent: $URLShortener-Frontend-accent,
-      warn: $URLShortener-Frontend-warn,
     ),
   )
 );
@@ -36,7 +80,8 @@ $URLShortener-Frontend-theme: mat.define-light-theme(
 
 :root {
   --background: #24252a;
-  --accent: #db0a5b;
+  --primary: #db0a5b;
+  font-size: 62.5%;
 }
 
 html,
@@ -45,7 +90,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Ubuntu, Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--background);
   color: #eeeeee;
+  font-size: 1.6rem;
 }

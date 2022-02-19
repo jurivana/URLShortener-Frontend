@@ -1,8 +1,14 @@
 <div class="wrapper" fxLayout="column" fxLayoutAlign="center center">
-  <form class="form">
-    <mat-form-field appearance="outline">
+  <form class="form" [formGroup]="form" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="2rem">
+    <mat-form-field appearance="outline" fxFlex="60" required floatLabel="always">
       <mat-label>URL</mat-label>
-      <input type="url" matInput />
+      <input type="url" matInput required formControlName="url" placeholder="https://shorturl.jurivana.de" />
+      <mat-error>URL wird benötigt.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Pfad</mat-label>
+      <span matPrefix>/</span>
+      <input type="url" matInput formControlName="path" placeholder="(optional)" />
     </mat-form-field>
   </form>
 </div>
