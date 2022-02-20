@@ -2,9 +2,13 @@
   height: 100%;
 }
 
-.form {
+.form,
+.inputs {
   width: 100%;
-  margin: 2rem;
+}
+
+.inputs {
+  padding: 2rem;
 }
 
 .highlight {
@@ -38,4 +42,20 @@ input {
 }
 ::ng-deep .mat-error {
   margin-left: $border-margin;
+}
+
+.button {
+  border-radius: 2.5rem;
+  width: 15rem;
+  height: 5rem;
+}
+
+.copy {
+  border-radius: 2.5rem;
+  height: 5rem;
+  margin-top: 4rem;
+}
+
+.copy-icon {
+  margin-left: 0.5rem;
 }

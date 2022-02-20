@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  backendUrl: 'https://api.shorturl.jurivana.de',
 };

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +13,13 @@ export class AppComponent {
     url: new FormControl('', [Validators.required]),
     path: new FormControl('', []),
   });
+  shortUrl = '';
+
+  constructor(private http: HttpClient) {}
+
+  onSubmit = () => {
+    this.http.post(`${environment.backendUrl}/generate`, this.form.value).subscribe((response) => {
+      console.log(response);
+    });
+  };
 }
