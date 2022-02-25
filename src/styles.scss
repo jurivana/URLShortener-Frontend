@@ -62,6 +62,19 @@ $primary: (
 $URLShortener-Frontend-primary: mat.define-palette($primary, 500, 400, 700);
 $URLShortener-Frontend-accent: mat.define-palette($accent, 800, 500, 900);
 
+// Font
+@font-face {
+  font-family: "NotoSans";
+  src: local("NotoSans"), url(./assets/fonts/NotoSans-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Summit";
+  src: local("Summit"), url(./assets/fonts/SummitRegular-Display.ttf) format("truetype");
+}
+$URLShortener-Frontend-typography: mat.define-typography-config(
+  $font-family: "NotoSans",
+);
+
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $URLShortener-Frontend-theme: mat.define-dark-theme(
@@ -70,6 +83,7 @@ $URLShortener-Frontend-theme: mat.define-dark-theme(
       primary: $URLShortener-Frontend-primary,
       accent: $URLShortener-Frontend-accent,
     ),
+    typography: $URLShortener-Frontend-typography,
   )
 );
 
@@ -90,7 +104,6 @@ body {
 }
 body {
   margin: 0;
-  font-family: Ubuntu, Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--background);
   color: #eeeeee;
   font-size: 1.6rem;

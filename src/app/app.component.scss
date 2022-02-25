@@ -59,3 +59,27 @@ input {
 .copy-icon {
   margin-left: 0.5rem;
 }
+
+.ng-hide {
+  visibility: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Summit";
+  font-size: 6.4rem;
+  margin-bottom: 10rem;
+}
+
+h1.text-xs {
+  font-size: 3.2rem;
+}
+
+h1.text-sm {
+  font-size: 4.8rem;
+}

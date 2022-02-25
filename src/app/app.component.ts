@@ -18,8 +18,15 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   onSubmit = () => {
-    this.http.post(`${environment.backendUrl}/generate`, this.form.value).subscribe((response) => {
-      console.log(response);
-    });
+    this.http.post(`${environment.backendUrl}/generate`, this.form.value).subscribe(
+      (response: any) => {
+        this.shortUrl = response.url;
+      },
+      (error: any) => {
+        if (error.status === 409) {
+          this.form.get('path')?.setErrors({ notUnique: true });
+        }
+      }
+    );
   };
 }
